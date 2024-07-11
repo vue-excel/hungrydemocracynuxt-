@@ -85,7 +85,7 @@
     </v-row>
 
     <!-- RecipeTypes -->
-    <div v-if="recipeTypeModules.length">
+    <!-- <div v-if="recipeTypeModules.length">
       <v-row
         v-for="(val, i) in recipeTypeModules"
         :key="i"
@@ -95,8 +95,8 @@
       >
         <RecipeTypes :title="val.type" :recipes="val.data" />
       </v-row>
-    </div>
-    <div v-else>
+    </div> -->
+    <!-- <div v-else>
       <div
         v-for="(el, idx) in Array.apply(null, Array(7)).map(function (x, i) {
           return i;
@@ -105,7 +105,7 @@
       >
         <RecipesSkeletonLoader />
       </div>
-    </div>
+    </div> -->
 
     <!-- Recipes of people you follow component -->
     <v-row style="margin-top: 24px" align="center" justify="space-around">
@@ -164,17 +164,7 @@ export default {
   },
   async fetch() {
     this.fromPage = "";
-    if (this.$route.query.from === "addRecipeSuccess") {
-      this.snackbar = true;
-      this.fromPage = "addRecipeSuccess";
-    }
-    if (this.$route.params.messageText) {
-      this.text = this.$route.params.messageText;
-      this.snackbar = true;
-    }
-    if (this.$route.params.action) {
-      this.resetSearch();
-    }
+   
     // await this.$store.dispatch("dbStore/loadRecipesFollowers", null, {
     //   root: true,
     // });
@@ -207,20 +197,7 @@ export default {
       }
       return {favouriteCount, isAlreadyAddedToFavourite, remove}
     },
-    async addToFavorites(index) {
-      if(this.uid){
-        const recipeId = this.homeRecipes[index].id
-        const remove = this.homeRecipes[index].remove
-        await addToFavourites(this.uid, recipeId, remove)
-        const result = await this.isAddedToFavourites(recipeId)
-        this.homeRecipes[index].isAlreadyAddedToFavourite = result.isAlreadyAddedToFavourite
-        this.homeRecipes[index].favouriteCount = result.favouriteCount
-        this.homeRecipes[index].remove = result.remove
-      }
-      else{
-        this.openForm();
-      }
-    },
+    
     openForm(){
       this.$store.dispatch('userStore/openForm', null, { root: true })
     },

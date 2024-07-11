@@ -9,14 +9,6 @@
               :items="results"
               filled
               solo
-              flat
-              clearable
-              hide-no-data
-              label="Search for recipes, ingredients, categories .. "
-              :search-input.sync="search"
-              item-text="typeAndCat"
-              item-value="objectID"
-              v-model="selected"
               return-object
               @change="submitSearch"
               no-data-text=""
