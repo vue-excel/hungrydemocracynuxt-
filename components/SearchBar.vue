@@ -55,18 +55,7 @@
           v-if="$vuetify.breakpoint.smAndDown && searchResults > 0 && !noResult"
           class="justify-end"
         >
-          <v-btn
-            small
-            color="primary"
-            elevation="1"
-            class="my-2"
-            @click="
-              searchResults > 0 ? (showFilters = true) : (showFilters = false)
-            "
-          >
-            <v-icon size="small">mdi-filter</v-icon>
-            Apply Filters
-          </v-btn>
+        
         </v-row>
       </v-col>
     </v-row>

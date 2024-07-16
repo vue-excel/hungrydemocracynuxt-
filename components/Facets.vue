@@ -50,12 +50,11 @@ export default {
       return facetValues;
     },
     async chooseFacet() {
-      const value = this.selection;
       const type = this.$props.type;
-      this.$store.dispatch('searchStore/updateFacets', { type, value }, { root: true });
-      const val = this.searchTerm;
-      const facets = this.facets;
-      this.$store.dispatch('searchStore/performSearch', { val, facets }, { root: true });
+      // this.$store.dispatch('searchStore/updateFacets', { type, value }, { root: true });
+      // const val = this.searchTerm;
+      // const facets = this.facets;
+      // this.$store.dispatch('searchStore/performSearch', { val, facets }, { root: true });
     },
   },
 };
