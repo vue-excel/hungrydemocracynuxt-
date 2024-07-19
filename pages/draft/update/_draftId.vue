@@ -25,10 +25,10 @@ export default {
   methods: {
     ...mapActions(["convertRecipeToState"]),
   },
-  // mounted() {
-  //   this.convertRecipeToState(this.recipeProp);
-  //   this.conversionCompleted = true;
-  // },
+  mounted() {
+    this.convertRecipeToState(this.recipeProp);
+    this.conversionCompleted = true;
+  },
 };
 </script>
 
