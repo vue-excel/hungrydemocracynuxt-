@@ -31,7 +31,9 @@
 export default {
     name: 'menu-tree',
     props: ['items', 'depth'],
-
+    computed: {
+      indent() {
+        return { transform: `translate(${this.depth * 10}px)` }
       }
     },
     methods: {
