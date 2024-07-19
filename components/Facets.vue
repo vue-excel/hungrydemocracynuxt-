@@ -18,12 +18,12 @@
 <script>
 
 export default {
-  props: {
-    name: String,
-    values: Object,
-    type: String,
-    currSelection: Array,
-  },
+  // props: {
+  //   name: String,
+  //   values: Object,
+  //   type: String,
+  //   currSelection: Array,
+  // },
   data() {
     return {
       items: this.getValues(),
@@ -50,7 +50,7 @@ export default {
       return facetValues;
     },
     async chooseFacet() {
-      const type = this.$props.type;
+.      const type = this.$props.type;
       // this.$store.dispatch('searchStore/updateFacets', { type, value }, { root: true });
       // const val = this.searchTerm;
       // const facets = this.facets;
